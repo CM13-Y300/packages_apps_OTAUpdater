@@ -35,6 +35,7 @@ public class OTAConfig extends Properties {
 
     private final static String DEVICE_NAME = "device_name";
 
+    private final static String VERSION_PREFIX = "version_prefix";
     private final static String VERSION_SOURCE = "version_source";
     private final static String VERSION_DELIMITER = "version_delimiter";
     private final static String VERSION_FORMAT = "version_format";
@@ -65,6 +66,10 @@ public class OTAConfig extends Properties {
 
     public String getReleaseType() {
         return getProperty(OTAConfig.RELEASE_TYPE, "Stable");
+    }
+
+    public String getPrefix() {
+        return getProperty(OTAConfig.VERSION_PREFIX, "");
     }
 
     public String getVersionSource() {

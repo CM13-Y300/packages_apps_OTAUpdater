@@ -31,11 +31,12 @@ public class OTAVersion {
 
     public static String getFullLocalVersion(Context context) {
         String source = OTAConfig.getInstance(context).getVersionSource();
+        String prefix = OTAConfig.getInstance(context).getPrefix();
         String sourceString = "";
         if (source.equalsIgnoreCase(UNAME_R)) {
             sourceString = OTAUtils.runCommand(UNAME_R);
         } else {
-            sourceString = OTAUtils.getBuildProp(source);
+            sourceString = prefix+OTAUtils.getBuildProp(source);
         }
         return sourceString;
     }
